@@ -7,771 +7,789 @@
 * Version: 1.0
 */
 
-
 /* ========================================================
    General
 ======================================================== */
 
-	/* Common Styles ------------------------------------------ */
-	
-	html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-rendering: optimizelegibility; }
-	
-	body {
-		font-family: 'Montserrat', 'Trebuchet MS', sans-serif;
-		font-size: 14px;
-		line-height: 1.5;
-		color: #3e4349;
-		background-color: #fff;
-		-webkit-font-smoothing: antialiased;
-	}
-	
-	::-moz-selection {background: #3e4349; color: #fff; }
-	::selection {background: #3e4349; color: #fff; }
-	
-	a { color: #fec400;
-		text-decoration: none;
-		-webkit-transition: color 0.1s linear, background-color 0.1s linear;
-		   -moz-transition: color 0.1s linear, background-color 0.1s linear;
-		    -ms-transition: color 0.1s linear, background-color 0.1s linear;
-		     -o-transition: color 0.1s linear, background-color 0.1s linear;
-		     	transition: color 0.1s linear, background-color 0.1s linear;
-	}
-	
-	a:hover, a:focus { color: #25292c; }
-		
-	img {
-		/* Responsive images (ensure images don't scale beyond their parents) */
-		max-width: 100%;
-		/* Part 1: Set a maxium relative to the parent */
-		width: auto\9;
-		/* IE7-8 need help adjusting responsive images */
-		height: auto;
-		/* Part 2: Scale the height according to the width, otherwise you get stretching */
-		vertical-align: middle;
-		border: 0;
-		-ms-interpolation-mode: bicubic;
-	}
-	
-	.wrapper {
-		position: absolute;
-		top: 100%;
-		width: 100%;
-	}
-	
-	.yellow-text {
-		color: #fec400;
-	}
-	
-	.white-text {
-		color: #fff;
-	}
-	
-	.page {
-		padding-top: 78px;
-		padding-bottom: 90px;
-	}
-	
-	.title {
-		margin-bottom: 40px;
-		font-size: 58px;
-		letter-spacing: -3px;
-		text-transform: uppercase;
-		font-weight: 700;
-		line-height: 1.1;
-	}
-	
-	.lead {
-		font-size: 24px;
-		letter-spacing: -1px;
-		line-height: 1.45;
-		margin-bottom: 35px;
-	}
-		
-	.info-lead {
-		font-size: 28px;
-		letter-spacing: -1px;
-		text-transform: uppercase;
-		font-weight: 700;
-		line-height: 1.3;
-	}
-	
-	hr {
-		border: 0;
-		border-bottom: 1px solid #e9ebec;
-		margin: 10px 0;
-	}
-	
-	hr.thick {
-		border-bottom: 4px solid #fff;
-		
-	}
-	
-	hr.white {
-		border-bottom: 1px solid #fff;
-	}
-	
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin: 10px 0;
-		font-family: inherit;
-		font-weight: bold;
-		line-height: 1.3;
-		color: inherit;
-	}
-	
-	h1,
-	h2,
-	h3 {
-		line-height: 1.4;
-		letter-spacing: -1px;
-	}
-	
-	h1 {
-		font-size: 40px;
-	}
-	
-	h2 {
-		font-size: 32px;
-	}
-	
-	h3 {
-		font-size: 26px;
-	}
-	
-	h4 {
-		font-size: 18px;
-	}
-	
-	h5 {
-		font-size: 14px;
-	}
-	
-	h6 {
-		font-size: 12px;
-	}
-	
+/* Common Styles ------------------------------------------ */
 
-	/* Header and Navigation ------------------------------------------ */
-	
-	header {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		overflow: hidden;
-		text-align: center;
-		color: #fff;
-		background: #3e4349 url(/assets/img/header1.jpg) no-repeat center center fixed;
-		background-size: cover;
-	}
-	
-	.pattern {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		background-image: url(/assets/img/pattern.png);
-		opacity: 0.8;
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-		filter: alpha(opacity=80);
-	}
-	
-	header .container {
-		height: 100%;
-		position: relative;
-	}
-	
-	.slogan {
-		font-size: 96px;
-		font-weight: 700;
-		letter-spacing: -5px;
-		line-height: 1;
-	}
-	
-	.maintext {
-		font-size: 32px;
-		color: #a5a7ac;
-		margin: 35px 5% 0 5%;
-		letter-spacing: -1px;
-		line-height: 1.3;
-	}
-	
-	.nextslide {
-		display: block;
-		position: absolute;
-		bottom: 47px;
-		left: 50%;
-		margin-left: -97px;
-		font-size: 24px;
-		color: #fff;
-		font-weight: normal;
-		-webkit-transition: all 0.1s linear;
-		   -moz-transition: all 0.1s linear;
-		    -ms-transition: all 0.1s linear;
-		     -o-transition: all 0.1s linear;
-		     	transition: all 0.1s linear;
-	}
-	
-	.nextslide:before {
-		content: 'É';
-		font-family: 'Web Symbols', sans-serif;
-		margin-right: 10px;
-		text-decoration: none;
-	}
-	
-	.nextslide:hover {
-		color: #fec400;
-	}
-	
-	.nextslide:hover:before {
-		content: 'Ê';
-	}
-	
-	.nextslide span {
-		text-decoration: underline;
-		font-style: normal;
-		letter-spacing: -1px;
-	}
-		
-		/* Navigation ------------------------------------------ */
-		
-		nav ul {
-			display: inline-block;
-		}
-		
-		nav #fluid-nav li, nav #fixed-nav li {
-			display: inline-block;
-			margin-left: 6px;
-			-webkit-font-smoothing: subpixel-antialiased;
-		}
-		
-		nav #fluid-nav li:first-child, nav #fixed-nav li:first-child  {
-			margin-left: 0;
-		}
-		
-		nav #fluid-nav li a, nav #fixed-nav li a {
-			color: #fff;
-			font-weight: normal;
-			text-transform: lowercase;
-			font-size: 12px;
-		}
-		
-		nav #fluid-nav li a:hover, nav #fixed-nav li a:hover {
-			color: #fec400;
-		}
-		
-		nav #fluid-nav li.current a, nav #fixed-nav li.current a {
-			color: #fec400;
-			font-weight: 700;
-		}
-		
-		nav ul.social-icons {
-			float: right;
-		}
-		
-		nav .social-icons li {
-			display: inline-block;
-		}
-		
-		nav .social-icons li a {
-			font-family: 'Web Symbols', sans-serif;
-			font-size: 13px;
-			color: #fff;
-		}
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+}
 
-		nav .social-icons li a:hover {
-			color: #fec400;
-		}
-				
-		nav#topnav {
-			text-align: left;
-			height: 120px;
-			overflow: hidden;
-			border-bottom: 4px solid #fff;
-		}
-		
-		nav#topnav .logo {
-			position: relative;
-			top: 51px;
-		}
-		
-		nav#topnav .logo-status {
-			position: relative;
-			top: 16px;
-			left: 220px;
-			font-size: 12px;
-			font-family: 'Trebuchet MS', sans-serif;
-			font-weight: 700;
-			color: #a5a7ac;
-		}
-		
-		nav#topnav #fixed-nav li {
-			margin-top: 56px;
-		}
-		
-		nav#topnav ul.social-icons {
-			margin-top: 54px;
-		}
-		
-		nav#mainnav {
-			width: 100%;
-			height: 50px;
-			background-color: #25292c;
-			overflow: hidden;
-			position: relative;
-			z-index: 1000;
-		}
-		
-		nav#mainnav .logo {
-			position: absolute;
-			top: 14px;
-		}
-		
-		nav#mainnav #fluid-nav li {
-			margin-top: 16px;
-		}
-		
-		nav#mainnav ul.social-icons {
-			margin-top: 14px;
-		}
-			
-		.selectnav {
-			display: none;
-			font-size: 12px;
-			position: absolute;
-		}
-		
-		nav#topnav .selectnav {
-			margin-top: 26px;
-		}
-		
-		nav#mainnav .selectnav {
-			margin-top: -12px;
-		}
-		
+body {
+	font-family: "Montserrat", "Trebuchet MS", sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #3e4349;
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+}
+
+::-moz-selection {
+	background: #3e4349;
+	color: #fff;
+}
+::selection {
+	background: #3e4349;
+	color: #fff;
+}
+
+a {
+	color: #fec400;
+	text-decoration: none;
+	-webkit-transition: color 0.1s linear, background-color 0.1s linear;
+	-moz-transition: color 0.1s linear, background-color 0.1s linear;
+	-ms-transition: color 0.1s linear, background-color 0.1s linear;
+	-o-transition: color 0.1s linear, background-color 0.1s linear;
+	transition: color 0.1s linear, background-color 0.1s linear;
+}
+
+a:hover,
+a:focus {
+	color: #25292c;
+}
+
+img {
+	/* Responsive images (ensure images don't scale beyond their parents) */
+	max-width: 100%;
+	/* Part 1: Set a maxium relative to the parent */
+	width: auto\9;
+	/* IE7-8 need help adjusting responsive images */
+	height: auto;
+	/* Part 2: Scale the height according to the width, otherwise you get stretching */
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+.wrapper {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+}
+
+.yellow-text {
+	color: #fec400;
+}
+
+.white-text {
+	color: #fff;
+}
+
+.page {
+	padding-top: 78px;
+	padding-bottom: 90px;
+}
+
+.title {
+	margin-bottom: 40px;
+	font-size: 58px;
+	letter-spacing: -3px;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+.lead {
+	font-size: 24px;
+	letter-spacing: -1px;
+	line-height: 1.45;
+	margin-bottom: 35px;
+}
+
+.info-lead {
+	font-size: 28px;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+hr {
+	border: 0;
+	border-bottom: 1px solid #e9ebec;
+	margin: 10px 0;
+}
+
+hr.thick {
+	border-bottom: 4px solid #fff;
+}
+
+hr.white {
+	border-bottom: 1px solid #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 10px 0;
+	font-family: inherit;
+	font-weight: bold;
+	line-height: 1.3;
+	color: inherit;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.4;
+	letter-spacing: -1px;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 26px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	font-size: 12px;
+}
+
+/* Header and Navigation ------------------------------------------ */
+
+header {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	text-align: center;
+	color: #fff;
+	background: #3e4349 url(/assets/img/header1.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+.pattern {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: url(/assets/img/pattern.png);
+	opacity: 0.8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+}
+
+header .container {
+	height: 100%;
+	position: relative;
+}
+
+.slogan {
+	font-size: 96px;
+	font-weight: 700;
+	letter-spacing: -5px;
+	line-height: 1;
+}
+
+.maintext {
+	font-size: 32px;
+	color: #a5a7ac;
+	margin: 35px 5% 0 5%;
+	letter-spacing: -1px;
+	line-height: 1.3;
+}
+
+.nextslide {
+	display: block;
+	position: absolute;
+	bottom: 47px;
+	left: 50%;
+	margin-left: -97px;
+	font-size: 24px;
+	color: #fff;
+	font-weight: normal;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-ms-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+.nextslide:before {
+	content: "É";
+	font-family: "Web Symbols", sans-serif;
+	margin-right: 10px;
+	text-decoration: none;
+}
+
+.nextslide:hover {
+	color: #fec400;
+}
+
+.nextslide:hover:before {
+	content: "Ê";
+}
+
+.nextslide span {
+	text-decoration: underline;
+	font-style: normal;
+	letter-spacing: -1px;
+}
+
+/* Navigation ------------------------------------------ */
+
+nav ul {
+	display: inline-block;
+}
+
+nav #fluid-nav li,
+nav #fixed-nav li {
+	display: inline-block;
+	margin-left: 6px;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+nav #fluid-nav li:first-child,
+nav #fixed-nav li:first-child {
+	margin-left: 0;
+}
+.social-icons svg {
+	display: inline-block;
+	padding: 0.5rem;
+	font-size: 15px;
+}
+nav #fluid-nav li a,
+nav #fixed-nav li a {
+	color: #fff;
+	font-weight: normal;
+	text-transform: lowercase;
+	font-size: 12px;
+}
+
+nav #fluid-nav li a:hover,
+nav #fixed-nav li a:hover {
+	color: #fec400;
+}
+
+nav #fluid-nav li.current a,
+nav #fixed-nav li.current a {
+	color: #fec400;
+	font-weight: 700;
+}
+
+nav ul.social-icons {
+	float: right;
+}
+
+nav .social-icons li {
+	display: inline-block;
+}
+
+nav .social-icons li a {
+	font-family: "Web Symbols", sans-serif;
+	font-size: 13px;
+	color: #fff;
+}
+
+nav .social-icons li a:hover {
+	color: #fec400;
+}
+
+nav#topnav {
+	text-align: left;
+	height: 120px;
+	overflow: hidden;
+	border-bottom: 4px solid #fff;
+}
+
+nav#topnav .logo {
+	position: relative;
+	top: 51px;
+}
+
+nav#topnav .logo-status {
+	position: relative;
+	top: 16px;
+	left: 220px;
+	font-size: 12px;
+	font-family: "Trebuchet MS", sans-serif;
+	font-weight: 700;
+	color: #a5a7ac;
+}
+
+nav#topnav #fixed-nav li {
+	margin-top: 56px;
+}
+
+nav#topnav ul.social-icons {
+	margin-top: 54px;
+}
+
+nav#mainnav {
+	width: 100%;
+	height: 50px;
+	background-color: #25292c;
+	overflow: hidden;
+	position: relative;
+	z-index: 1000;
+}
+
+nav#mainnav .logo {
+	position: absolute;
+	top: 14px;
+}
+
+nav#mainnav #fluid-nav li {
+	margin-top: 16px;
+}
+
+nav#mainnav ul.social-icons {
+	margin-top: 14px;
+}
+
+.selectnav {
+	display: none;
+	font-size: 12px;
+	position: absolute;
+}
+
+nav#topnav .selectnav {
+	margin-top: 26px;
+}
+
+nav#mainnav .selectnav {
+	margin-top: -12px;
+}
+
 /* ========================================================
    Pages
 ======================================================== */
 
-	/* About ------------------------------------------ */
-	
-	.two-columns {
-		margin-bottom: 20px;
-	}
-	
-	/* Team ------------------------------------------ */
-	
-	#team {
-		background-color: #eeedec;
-	}
-	
-	.profile {
-		background-color: #fff;
-		border-radius: 4px;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		-ms-border-radius: 4px;
-		-o-border-radius: 4px;
-		margin-top: 40px;
-		padding-bottom: 20px;
-	}
-	
-	.profile img {
-		border-radius: 4px 4px 0 0;
-		-webkit-border-radius: 4px 4px 0 0;
-		-moz-border-radius: 4px 4px 0 0;
-		-ms-border-radius: 4px 4px 0 0;
-		-o-border-radius: 4px 4px 0 0;
-		margin-bottom: 20px;
-	}
-	
-	.profile-name {
-		font-size: 18px;
-		margin: 0 20px;
-		letter-spacing: -1px;
-		line-height: 1.2;
-	}
-	
-	.profile-job {
-		font-size: 12px;
-		color: #939aa2;
-		margin: 0 20px 16px 20px;
-	}
-	
-	.profile-desc {
-		font-size: 12px;
-		font-family: 'Trebuchet MS', sans-serif;
-		margin: 0 20px 23px 20px;
-	}
-	
-	.profile-social-icons {
-		margin: 0 20px;
-	}
-	
-	.profile-social-icons li {
-		display: inline-block;
-	}
-	
-	.profile-social-icons li a {
-		font-family: 'Web Symbols', sans-serif;
-		font-size: 15px;
-		color: #939aa2;
-	}
-	
-	.profile-social-icons li a:hover {
-		color: #fec400;
-	}
-	
-	
-	/* Services ------------------------------------------ */
-	
-	#services {
-		background-color: #25292c;
-		color: #fff;
-	}
+/* About ------------------------------------------ */
 
-	#services hr.thick{
-		margin-top: 40px;
-		margin-bottom: 35px;
-	}
-	
-	#services hr.white{
-		margin-top: 33px;
-	}
-		
-	.service-title {
-		font-size: 16px;
-		text-transform: uppercase;
-		position: relative;
-		font-weight: 700;
-		margin-bottom: 14px;
-	}
-	
-	.service-title span {
-		font-size: 24px;
-		font-family: 'Web Symbols', sans-serif;
-		margin-right: 6px;
-		position: relative;
-		top: 2px;
-		text-transform: none;
-		font-weight: normal;
-		display: none;
-	}
-	
-	.service-text {
-		font-size: 12px;
-		font-family: 'Trebuchet MS', sans-serif;
-		
-	}
-	
-	
-	/* Portfolio ------------------------------------------ */
-	
-	#portfolio .flexslider {
-		margin-bottom: 60px;
-	}
-		
-	#portfolio hr {
-		margin: 6px 0 24px 0;
-	}
-	
-	#portfolio .option-set {
-		margin: 0 0 -15px 0;
-	}
-	
-	.project-wrp {
-		display: block;
-		background-color: #f3f4f5;
-		border-radius: 4px;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		-ms-border-radius: 4px;
-		-o-border-radius: 4px;
-		position: relative;
-		overflow: hidden;
-		padding-bottom: 16px;
-	}
-	
-	.project-wrp .profile-photo {
-		position: relative;
-		overflow: hidden;
-	}
-	
-	.project-wrp img {
-		border-radius: 4px 4px 0 0;
-		-webkit-border-radius: 4px 4px 0 0;
-		-moz-border-radius: 4px 4px 0 0;
-		-ms-border-radius: 4px 4px 0 0;
-		-o-border-radius: 4px 4px 0 0;
-		-webkit-transition: all 0.1s linear;
-		   -moz-transition: all 0.1s linear;
-		    -ms-transition: all 0.1s linear;
-		     -o-transition: all 0.1s linear;
-		     	transition: all 0.1s linear;
-	}
-	
-	.project-wrp .project-name {
-		color: #4a4e53;
-		font-size: 14px;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 16px 20px 0 20px;
-		-webkit-transition: all 0.1s linear;
-		   -moz-transition: all 0.1s linear;
-		    -ms-transition: all 0.1s linear;
-		     -o-transition: all 0.1s linear;
-		     	transition: all 0.1s linear;
-	}
-	
-	.project-wrp .project-client {
-		font-size: 12px;
-		color: #939aa2;
-		font-weight: normal;
-		margin: 0 20px 0 20px;
-		-webkit-transition: all 0.1s linear;
-		   -moz-transition: all 0.1s linear;
-		    -ms-transition: all 0.1s linear;
-		     -o-transition: all 0.1s linear;
-		     	transition: all 0.1s linear;
-	}
-	
-	.project-wrp .profile-icon {
-		opacity: 0;
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-		filter: alpha(opacity=0);
-		position: absolute;
-		top: 2%;
-		left: 50%;
-		margin-left: -30px;
-		font-family: 'Web Symbols', sans-serif;
-		font-size: 60px;
-		color: #fff;
-		z-index: 2;
-		-webkit-transition: all 0.1s linear;
-		   -moz-transition: all 0.1s linear;
-		    -ms-transition: all 0.1s linear;
-		     -o-transition: all 0.1s linear;
-		     	transition: all 0.1s linear;
-	}
-	
-	.project-wrp:hover {
-		background-color: #fec400;
-	}
-	
-	.project-wrp:hover img {
-		opacity: 0.5;
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-		filter: alpha(opacity=50);
-	}
-	
-	.project-wrp:hover .project-name, .project-wrp:hover .project-client {
-		color: #fff;
-	}
-	
-	.project-wrp:hover .profile-icon {
-		opacity: 1;
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-		filter: alpha(opacity=100);
-		top: 50%;
-		margin-top: -50px;
-	}
-	
-	.sub-title {
-		float: left;
-		margin-right: 15px;
-		text-transform: uppercase;
-		font-weight: 700;
-		font-size: 18px;
-	}
-	
-	.option-set {
-		position: relative;
-		bottom: 7px;
-	}
-	
-	.option-set li {
-		display: inline-block;
-		margin-left: 15px;
-	}
-	
-	.option-set li.filter-icon {
-		font-size: 24px;
-		font-family: 'Web Symbols', sans-serif;
-		color: #939aa2;
-		position: relative;
-		top: 2px;
-		text-transform: none;
-	}
-	
-	.option-set li a {
-		display: block;
-		color: #4a4e53;
-	}
-	
-	.option-set li a:hover {
-		color: #fec400;
-	}
-	
-	.option-set li a.selected {
-		font-weight: 700;
-		color: #fec400;
-	}
-	
-	/* Twitter Feed ------------------------------------------ */
-	
-	#twitter {
-		padding-top: 50px;
-		padding-bottom: 34px;
-		background: #f3f4f5;
-	}
-	
-	.twitter-title {
-		font-size: 30px;
-		text-transform: uppercase;
-		letter-spacing: -1px;
-		font-weight: 700;
-		margin-bottom: 23px;
-	}
-	
-	.twitter-title a {
-		text-transform: lowercase;
-	}
-	
-	.tweet-date a {
-		font-size: 12px;
-		font-family: 'Trebuchet MS', sans-serif;
-		color: #939aa2;
-		display: block;
-		margin-bottom: 10px;
-	}
-	
-	.tweet_list li {
-		display: block;
-	}
+.two-columns {
+	margin-bottom: 20px;
+}
 
-	/* Contact Us ------------------------------------------ */
-	
-	#contact {
-		/* background: #fec400 url(../img/top-waves.png) repeat-x top; */
-		color: #fff;
-		text-align: center;
-		padding-top: 90px;
-	}
-	
-	#contact a {
-		color: #fff;
-	}
+/* Team ------------------------------------------ */
 
-	#contact .title {
-		margin-bottom: 27px;
-	}
-	
-	.contact-text {
-		font-size: 20px;
-		padding: 0 3%;
-	}
+#team {
+	background-color: #eeedec;
+}
 
-	.email, .phone {
-		font-size: 36px;
-		font-weight: 700;
-		letter-spacing: -2px;
-		font-style: normal;
-		display: inline-block;
-		margin-top: 20px;
-		margin-bottom: 6px
-	}
-	
-	.email {
-		margin-right: 60px;
-	}
-	
-	.email:before {
-		content: '8';
-		margin-right: 26px;
-		font-family: 'Web Symbols', sans-serif;
-		font-size: 58px;
-		position: relative;
-		top: 6px;
-	}
-	
-	.phone:before {
-		content: '|';
-		margin-right: 26px;
-		font-family: 'Web Symbols', sans-serif;
-		font-size: 58px;
-		position: relative;
-		top: 6px;
-	}
-	
-	.address {
-		font-size: 30px;
-		font-weight: 700;
-		letter-spacing: -1px;
-		font-style: normal;
-		margin-bottom: 75px;
-	}
-	
-	.address:before {
-		content: 'u';
-		margin-right: 26px;
-		font-family: 'Web Symbols', sans-serif;
-		font-size: 56px;
-		position: relative;
-		top: 7px;
-	}
-	
+.profile {
+	background-color: #fff;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	margin-top: 40px;
+	padding-bottom: 20px;
+}
 
-	/* Feedback ------------------------------------------ */
-	
-	#feedback {
-		background: #25292c url(/assets/img/bottom-waves.png) repeat-x bottom;
-		color: #fff;
-		padding-top: 72px;
-		padding-bottom: 78px;
-	}
-	
-	#feedback .title {
-		font-size: 36px;
-		text-transform: none;
-		letter-spacing: -2px;
-	}
-	
-	#feedback button.btn.color {
-		padding: 13px 20px 20px 20px !important;
-		text-transform: uppercase;
-		font-size: 18px;
-		letter-spacing: -1px;
-		margin-top: 20px;
-	}
-	
-	#feedback button.btn.color:hover {
-		background: #fff;
-		color: #3e4349;
-	}
-	
-	#feedback button i.web-icon {
-		position: relative;
-		top: 4px;
-	}
-	
-	#feedback label {
-		color: #939aa2;
-		font-size: 18px;
-		display: none;
-	}
-	
-	.textarea-margin {
-		margin-top: 20px;
-	}
-	
-	/* Copyright ------------------------------------------ */
-	
-	#copyright {
-		text-align: center;
-		padding-top: 50px;
-		padding-bottom: 50px;
-		background: #f3f4f5;
-	}
-	
+.profile img {
+	border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	-ms-border-radius: 4px 4px 0 0;
+	-o-border-radius: 4px 4px 0 0;
+	margin-bottom: 20px;
+}
+
+.profile-name {
+	font-size: 18px;
+	margin: 0 20px;
+	letter-spacing: -1px;
+	line-height: 1.2;
+}
+
+.profile-job {
+	font-size: 12px;
+	color: #939aa2;
+	margin: 0 20px 16px 20px;
+}
+
+.profile-desc {
+	font-size: 12px;
+	font-family: "Trebuchet MS", sans-serif;
+	margin: 0 20px 23px 20px;
+}
+
+.profile-social-icons {
+	margin: 0 20px;
+}
+
+.profile-social-icons li {
+	display: inline-block;
+}
+
+.profile-social-icons li a {
+	font-family: "Web Symbols", sans-serif;
+	font-size: 15px;
+	color: #939aa2;
+}
+
+.profile-social-icons li a:hover {
+	color: #fec400;
+}
+
+/* Services ------------------------------------------ */
+
+#services {
+	background-color: #25292c;
+	color: #fff;
+}
+
+#services hr.thick {
+	margin-top: 40px;
+	margin-bottom: 35px;
+}
+
+#services hr.white {
+	margin-top: 33px;
+}
+
+.service-title {
+	font-size: 16px;
+	text-transform: uppercase;
+	position: relative;
+	font-weight: 700;
+	margin-bottom: 14px;
+}
+
+.service-title span {
+	font-size: 24px;
+	font-family: "Web Symbols", sans-serif;
+	margin-right: 6px;
+	position: relative;
+	top: 2px;
+	text-transform: none;
+	font-weight: normal;
+	display: none;
+}
+
+.service-text {
+	font-size: 12px;
+	font-family: "Trebuchet MS", sans-serif;
+}
+
+/* Portfolio ------------------------------------------ */
+
+#portfolio .flexslider {
+	margin-bottom: 60px;
+}
+
+#portfolio hr {
+	margin: 6px 0 24px 0;
+}
+
+#portfolio .option-set {
+	margin: 0 0 -15px 0;
+}
+
+.project-wrp {
+	display: block;
+	background-color: #f3f4f5;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 16px;
+}
+
+.project-wrp .profile-photo {
+	position: relative;
+	overflow: hidden;
+}
+
+.project-wrp img {
+	border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	-ms-border-radius: 4px 4px 0 0;
+	-o-border-radius: 4px 4px 0 0;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-ms-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+.project-wrp .project-name {
+	color: #4a4e53;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin: 16px 20px 0 20px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-ms-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+.project-wrp .project-client {
+	font-size: 12px;
+	color: #939aa2;
+	font-weight: normal;
+	margin: 0 20px 0 20px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-ms-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+.project-wrp .profile-icon {
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	position: absolute;
+	top: 2%;
+	left: 50%;
+	margin-left: -30px;
+	font-family: "Web Symbols", sans-serif;
+	font-size: 60px;
+	color: #fff;
+	z-index: 2;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-ms-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+.project-wrp:hover {
+	background-color: #fec400;
+}
+
+.project-wrp:hover img {
+	opacity: 0.5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+}
+
+.project-wrp:hover .project-name,
+.project-wrp:hover .project-client {
+	color: #fff;
+}
+
+.project-wrp:hover .profile-icon {
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	top: 50%;
+	margin-top: -50px;
+}
+
+.sub-title {
+	float: left;
+	margin-right: 15px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.option-set {
+	position: relative;
+	bottom: 7px;
+}
+
+.option-set li {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+.option-set li.filter-icon {
+	font-size: 24px;
+	font-family: "Web Symbols", sans-serif;
+	color: #939aa2;
+	position: relative;
+	top: 2px;
+	text-transform: none;
+}
+
+.option-set li a {
+	display: block;
+	color: #4a4e53;
+}
+
+.option-set li a:hover {
+	color: #fec400;
+}
+
+.option-set li a.selected {
+	font-weight: 700;
+	color: #fec400;
+}
+
+/* Twitter Feed ------------------------------------------ */
+
+#twitter {
+	padding-top: 50px;
+	padding-bottom: 34px;
+	background: #f3f4f5;
+}
+
+.twitter-title {
+	font-size: 30px;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: 700;
+	margin-bottom: 23px;
+}
+
+.twitter-title a {
+	text-transform: lowercase;
+}
+
+.tweet-date a {
+	font-size: 12px;
+	font-family: "Trebuchet MS", sans-serif;
+	color: #939aa2;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.tweet_list li {
+	display: block;
+}
+
+/* Contact Us ------------------------------------------ */
+
+#contact {
+	/* background: #fec400 url(../img/top-waves.png) repeat-x top; */
+	color: #fff;
+	text-align: center;
+	padding-top: 90px;
+}
+
+#contact a {
+	color: #fff;
+}
+
+#contact .title {
+	margin-bottom: 27px;
+}
+
+.contact-text {
+	font-size: 20px;
+	padding: 0 3%;
+}
+
+.email,
+.phone {
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	font-style: normal;
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 6px;
+}
+
+.email {
+	margin-right: 60px;
+}
+
+.email:before {
+	content: "8";
+	margin-right: 26px;
+	font-family: "Web Symbols", sans-serif;
+	font-size: 58px;
+	position: relative;
+	top: 6px;
+}
+
+.phone:before {
+	content: "|";
+	margin-right: 26px;
+	font-family: "Web Symbols", sans-serif;
+	font-size: 58px;
+	position: relative;
+	top: 6px;
+}
+
+.address {
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing: -1px;
+	font-style: normal;
+	margin-bottom: 75px;
+}
+
+.address:before {
+	content: "u";
+	margin-right: 26px;
+	font-family: "Web Symbols", sans-serif;
+	font-size: 56px;
+	position: relative;
+	top: 7px;
+}
+
+/* Feedback ------------------------------------------ */
+
+#feedback {
+	background: #25292c url(/assets/img/bottom-waves.png) repeat-x bottom;
+	color: #fff;
+	padding-top: 72px;
+	padding-bottom: 78px;
+}
+
+#feedback .title {
+	font-size: 36px;
+	text-transform: none;
+	letter-spacing: -2px;
+}
+
+#feedback button.btn.color {
+	padding: 13px 20px 20px 20px !important;
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: -1px;
+	margin-top: 20px;
+}
+
+#feedback button.btn.color:hover {
+	background: #fff;
+	color: #3e4349;
+}
+
+#feedback button i.web-icon {
+	position: relative;
+	top: 4px;
+}
+
+#feedback label {
+	color: #939aa2;
+	font-size: 18px;
+	display: none;
+}
+
+.textarea-margin {
+	margin-top: 20px;
+}
+
+/* Copyright ------------------------------------------ */
+
+#copyright {
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: #f3f4f5;
+}
