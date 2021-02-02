@@ -1,0 +1,299 @@
+/*
+* Theme Name: Goltsman Template
+* Theme URI: http://themes.tvda.eu
+* Description: Goltsman Responsive One Page HTML Template for creative or digital agency
+* Author: Iya Sidelnikov and TVDA
+* Author URI: http://themes.tvda.eu
+* Version: 1.0
+*/
+
+/* --------- Desktop --------- */
+@media (min-width: 1200px) {
+
+	nav #fluid-nav li, nav #fixed-nav li {
+		margin-left: 12px;
+	}
+	
+	nav #fluid-nav li a, nav #fixed-nav li a {
+		font-size: 14px;
+	}
+	
+	nav .social-icons li a {
+		font-size: 15px;
+	}
+	
+	.slogan {
+		font-size: 110px;
+		letter-spacing: -6px;
+	}
+	
+	.page {
+		padding-top: 98px;
+		padding-bottom: 110px;
+	}
+	
+	.service-title span {
+		display: inline;
+	}
+	
+}
+
+/* --------- iPad Vertical --------- */
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+	.slogan {
+		font-size: 82px;
+		letter-spacing: -4px;
+	}
+	
+	.maintext {
+		font-size: 28px;
+	}
+	
+	.title {
+		font-size: 48px;
+	}
+	
+	.lead {
+		font-size: 20px;
+		letter-spacing: 0;
+	}
+	
+	.info-lead {
+		font-size: 24px;
+		letter-spacing: -1px;
+	}
+	
+	.option-set li.filter-icon {
+		margin-left: 0;
+	}
+	
+	.email, .phone {
+		font-size: 28px;
+		letter-spacing: -1px;
+	}
+	
+	.email:before, .phone:before {
+		margin-right: 16px;
+		font-size: 40px;
+		top: 4px;
+	}
+
+	.address {
+		font-size: 22px;
+		margin-bottom: 75px;
+	}
+	
+	.address:before {
+		margin-right: 16px;
+		font-size: 40px;
+		top: 4px;
+	}
+	
+	nav #fluid-nav li, nav #fixed-nav li {
+		display: none;
+	}
+	
+	.selectnav { 
+		display: block; 
+	}
+	
+	nav .social-icons li a {
+		font-size: 15px;
+	}
+
+		
+}
+
+/* --------- Mobile Phones --------- */
+@media (max-width: 767px) {
+
+	header {
+		height: 400px;
+		background-size: 1000px;
+		background-position: top right;
+	}
+	
+	.wrapper {
+		top: 600px;
+	}
+
+	.selectnav { 
+		display: block;
+		right: 0;
+		top: 21px;
+	}
+	
+	nav#topnav .social-icons li a {
+		display: none;
+	}
+	
+	nav#mainnav .container {
+		position: relative;
+	}
+	
+	nav#mainnav .selectnav {
+		left: 0;
+	}
+	
+	nav#mainnav .logo {
+		display: none;
+	}
+	
+	nav .social-icons li a {
+		font-size: 15px;
+	}
+	
+	.slogan {
+		font-size: 54px;
+		letter-spacing: -3px;
+		margin-top: 30%;
+	}
+
+	.nextslide {
+		display: none;
+	}
+	
+	.maintext {
+		display: none;
+	}
+	
+	.title {
+		font-size: 34px;
+		letter-spacing: -2px;
+		margin-bottom: 20px;
+	}
+	
+	.page {
+		padding-top: 58px;
+		padding-bottom: 60px;
+	}
+	
+	.lead {
+		font-size: 18px;
+		letter-spacing: 0;
+		margin-bottom: 20px;
+	}
+	
+	.info-lead {
+		font-size: 18px;
+		letter-spacing: 0;
+	}
+	
+	.two-columns {
+		margin-bottom: 10px;
+	}
+	
+	.service-title span {
+		display: inline;
+	}
+	
+	#services hr.white {
+		margin: 8px 0 10px 0;
+	}
+	
+	#contact {
+		padding-top: 50px;
+		background-image: none;
+	}
+	
+	.contact-text {
+		font-size: 16px;
+	}
+	
+	.email, .phone {
+		font-size: 24px;
+		letter-spacing: -1px;
+	}
+	
+	.email:before, .phone:before {
+		margin-right: 12px;
+		font-size: 30px;
+		top: 3px;
+	}
+	
+	.email {
+		margin-right: 0;
+	}
+	
+	.phone {
+		margin-top: 0;
+	}
+
+	.address {
+		font-size: 18px;
+		margin-bottom: 50px;
+	}
+	
+	.address:before {
+		margin-right: 12px;
+		font-size: 30px;
+		top: 4px;
+	}
+	
+	#feedback {
+		display: none;
+	}
+	
+	#copyright {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		font-size: 12px;
+	}
+	
+	.option-set li {
+		margin-left: 0;
+		margin-right: 10px;
+		margin-bottom: 4px; 
+	}
+	
+	.info-block a.btn {
+		position: inherit;
+		margin-top: 20px;
+	}
+	
+	.ib-text {
+		padding-right: 0;
+	}
+	
+	.fancybox-title {
+		display: none;
+	}
+	
+	.tweet_list li {
+		margin-bottom: 20px;;
+	}
+
+}
+
+/* --------- iPhone Vertical  --------- */
+@media (max-width: 479px) {
+
+	.slogan {
+		font-size: 36px;
+		letter-spacing: -2px;
+		margin-top: 10%;
+	}
+	
+	.nextslide {
+		display: block;
+		font-size: 20px;
+		margin-left: -75px;
+	}
+	
+	nav#topnav .selectnav {
+		left: 10px;
+		top: 60px;
+		width: 300px;
+	}
+	
+	nav#topnav {
+		height: 130px;
+	}
+	
+	.flexslider {
+		display: none;
+	}
+	
+}
