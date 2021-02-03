@@ -1,7 +1,7 @@
 const PortfolioNav = ({ nav }) => {
 	return (
 		<li>
-			<a class='selected' href='#filter' data-option-value='*'>
+			<a class='selected' href={nav.url} data-option-value='*'>
 				<span></span>
 				{nav.title}
 			</a>

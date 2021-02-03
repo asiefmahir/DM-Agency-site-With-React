@@ -21,7 +21,7 @@ html {
 }
 
 body {
-	font-family: "Montserrat", "Trebuchet MS", sans-serif;
+	font-family: "Montserrat", sans-serif; /* "Trebuchet MS" */
 	font-size: 14px;
 	line-height: 1.5;
 	color: #3e4349;

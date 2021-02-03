@@ -55,8 +55,8 @@
 // 						<hr />
 // 						<div class='sub-title visible-desktop'>{cardsTitle}</div>
 // 						<ul class='option-set' data-option-key='filter'>
-// 							<li class='filter-icon hidden-phone'>{navInfos.icon}</li>
-// 							{navInfos.map((nav) => (
+// 							<li class='filter-icon hidden-phone'>{navInfos[0].icon}</li>
+// 							{navInfos.slice(1).map((nav) => (
 // 								<PortfolioNav nav={nav} />
 // 							))}
 // 						</ul>
@@ -365,69 +365,59 @@
 
 // export default Portfolio;
 
-const Portfolio = () => {
+import { useState } from "react";
+import { Carousel } from "react-bootstrap";
+import PortfolioSliderItem from "../../components/Portfolio/PortfolioSliderItem";
+
+const Portfolio = ({ portfolios, title, description, projects }) => {
+	const [selected, setSelected] = useState("");
+	const handleSelect = (id) => {
+		setSelected(id);
+	};
+	const [index, setIndex] = useState(0);
+
+	const handleSelect = (selectedIndex) => {
+		setIndex(selectedIndex);
+	};
 	return (
 		<section id='portfolio' class='page'>
 			<div class='container'>
 				<div class='row'>
 					<div class='span12'>
-						<div class='title'>Portfolio</div>
+						<div class='title'>{title}</div>
 						<div class='flexslider'>
 							<ul class='slides'>
-								<li>
-									<div class='slider-text'>
-										<a href='#' class='slider-title'>
-											Reservator’s Mobile App
-										</a>
-										<div class='slider-desc'>
-											Duis tincidunt erat quam. Etiam placerat sapien elit.
-											Pellentesque egestas ornare sagittis. Sed augue lorem,
-											dignissim eget bibendum vitae, scelerisque eget justo.
-											Class aptent taciti sociosqu ad litora.
-										</div>
-									</div>
-									<img src='img/slider/1.jpg' alt='' />
-								</li>
-								<li>
-									<div class='slider-text'>
-										<a href='#' class='slider-title'>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit
-										</a>
-										<div class='slider-desc'>
-											Pellentesque egestas ornare sagittis. Sed augue lorem,
-											dignissim eget bibendum vitae, scelerisque eget justo.
-											Class aptent taciti sociosqu ad litora.
-										</div>
-									</div>
-									<img src='img/slider/2.jpg' alt='' />
-								</li>
-								<li>
-									<div class='slider-text'>
-										<a href='#' class='slider-title'>
-											Class aptent taciti
-										</a>
-										<div class='slider-desc'>
-											Lorem ipsum dolor sit amet, adipiscing el. Maecenas neque
-											diam, luctus at laoreet in, auctor ut tellus. Etiam enim
-											lacus, ornare et tempor et.
-										</div>
-									</div>
-									<img src='img/slider/3.jpg' alt='' />
-								</li>
+								<Carousel activeIndex={index} onSelect={handleSelect}>
+									{portfolios.map((portfolio) => (
+										<PortfolioSliderItem portfolio={portfolio} />
+									))}
+								</Carousel>
 							</ul>
 						</div>
-						<div class='lead'>
-							Duis tincidunt erat quam. Etiam placerat sapien elit. Pellentesque
-							egestas ornare sagittis. Sed augue lorem, dignissim eget bibendum
-							vitae, scelerisque eget justo. Class aptent taciti sociosqu ad
-							litora torquent per conubia nostra, per inceptos himenaeos.
-						</div>
+						<div class='lead'>{description}</div>
 						<hr />
 						<div class='sub-title visible-desktop'>Other works:</div>
 
 						<ul class='option-set' data-option-key='filter'>
-							<li class='filter-icon hidden-phone'>&#0065;</li>
-							<li>
+							{/* <li class='filter-icon hidden-phone'>&#0065;</li> */}
+							<li class='filter-icon hidden-phone'>{projects[0].icon}</li>
+							<a class='selected' href='#filter' data-option-value='*'>
+								<span></span>
+								{projects[0].title}
+							</a>
+							{projects.slice(1).map((project) => (
+								<li key={project.id}>
+									<a
+										class='selected'
+										href='#filter'
+										data-option-value='*'
+										onClick={() => handleSelect(project.id)}>
+										<span></span>
+										{project.title}
+									</a>
+								</li>
+							))}
+							{/* <li>
 								<a class='selected' href='#filter' data-option-value='*'>
 									<span></span>All projects
 								</a>
@@ -451,7 +441,7 @@ const Portfolio = () => {
 								<a href='#filter' data-option-value='.strategy'>
 									<span></span>Strategy
 								</a>
-							</li>
+							</li> */}
 						</ul>
 
 						<div id='posts' class='row isotope '>
