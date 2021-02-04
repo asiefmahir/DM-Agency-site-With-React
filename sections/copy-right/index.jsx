@@ -1,4 +1,5 @@
 const CopyRight = () => {
+	// const { text } = privacy;
 	return (
 		<section id='copyright'>
 			<div class='container'>

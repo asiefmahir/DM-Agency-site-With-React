@@ -1,11 +1,11 @@
 import SocialIcons from "../SocialIcons/SocialIcons";
 import Navigation from "./Navigation";
 
-const Nav = () => {
+const Nav = ({ navlink, socialLinks }) => {
 	return (
 		<div className='span7'>
-			<Navigation />
-			<SocialIcons />
+			<Navigation navlink={navlink} />
+			<SocialIcons socialLinks={socialLinks} />
 		</div>
 	);
 };

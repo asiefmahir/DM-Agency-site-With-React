@@ -1,18 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faBehanceSquare,
-	faFacebookSquare,
-	faLinkedin,
-	faTwitterSquare,
-} from "@fortawesome/free-brands-svg-icons";
+import * as All from "@fortawesome/free-brands-svg-icons";
 
-const SocialIcons = () => {
+const SocialIcons = ({ socialLinks }) => {
 	return (
 		<ul className='social-icons'>
-			<FontAwesomeIcon icon={faFacebookSquare} />
-			<FontAwesomeIcon icon={faTwitterSquare} />
-			<FontAwesomeIcon icon={faLinkedin} />
-			<FontAwesomeIcon icon={faBehanceSquare} />
+			{socialLinks.map((link) => (
+				<a href={link.link}>
+					<FontAwesomeIcon icon={`${All}/${link.iconText}`} />
+				</a>
+			))}
 		</ul>
 	);
 };

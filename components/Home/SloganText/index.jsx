@@ -1,12 +1,15 @@
-const Slogan = () => {
+import Span from "../../Common/Span";
+
+const SloganText = ({ title }) => {
 	return (
 		<div className='slogan'>
 			<div id='slogan-text' className='slogan-text'>
-				We love
-				<span className='yellow-text'> digital communications</span>.
+				{title.map((text) => (
+					<Span text={text} />
+				))}
 			</div>
 		</div>
 	);
 };
 
-export default Slogan;
+export default SloganText;

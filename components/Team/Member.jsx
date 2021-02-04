@@ -1,18 +1,18 @@
 import SocialIcon from "./SocialIcon";
 
 const Member = ({ member }) => {
-	const { name, desgnation, socialIcons, image } = member;
+	const { name, designation, socialLink, excerpt, url } = member;
 	return (
 		<div class='span3 profile'>
-			<img src={image} alt={name} />
+			<img src={url} alt={name} />
 			<div class='profile-name'>{name}</div>
-			<div class='profile-job'>{desgnation}</div>
+			<div class='profile-job'>{designation}</div>
 			<div class='profile-desc'>
-				<p>{about}</p>
+				<p>{excerpt}</p>
 			</div>
 			<ul class='profile-social-icons'>
-				{socialIcons.map((icon) => (
-					<SocialIcon icon={icon} />
+				{socialLink.map((link) => (
+					<SocialIcon link={link} />
 				))}
 			</ul>
 		</div>

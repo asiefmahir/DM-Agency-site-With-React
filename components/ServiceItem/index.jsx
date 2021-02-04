@@ -1,9 +1,14 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as All from "@fortawesome/free-brands-svg-icons";
+
 const ServiceItem = ({ service }) => {
-	const { title, icon, description } = service;
+	const { name, iconText, description } = service;
 	return (
 		<div class='span2'>
 			<div class='service-title'>
-				<span class='service-icon'>&#0115;</span>
+				<span class='service-icon'>
+					<FontAwesomeIcon icon={`${All}/${iconText}`} />
+				</span>
 				{title}
 			</div>
 			<div class='service-text'>

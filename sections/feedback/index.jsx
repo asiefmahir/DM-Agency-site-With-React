@@ -1,45 +1,33 @@
-const Feedback = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as All from "@fortawesome/free-brands-svg-icons";
+import InputField from "../../components/FeedBack/InputField";
+import TextArea from "../../components/FeedBack/TextArea";
+
+const Feedback = ({ feedback }) => {
 	return (
 		<section id='feedback'>
 			<div class='container'>
 				<div class='row'>
 					<div class='span12'>
-						<div class='title'>Feedback form</div>
+						<div class='title'>{feedback.title}</div>
 						<div class='result'></div>
 
 						<form class='well'>
 							<div class='row'>
-								<div class='span6 pull-left'>
-									<label>Your name</label>
-									<input
-										class='span6'
-										type='text'
-										name='name'
-										placeholder='Your Name'
+								{feedback.field.map((item) => {
+									if (item.type !== "textarea") {
+										return <InputField item={item} />;
+									} else {
+										return <TextArea item={item} />;
+									}
+								})}
+
+								<button type='submit' class='btn rounded color'>
+									<FontAwesomeIcon
+										icon={`${All}/${feedback.messageLink.url}`}
 									/>
-								</div>
-								<div class='span6 pull-right'>
-									<label>Your e-mail</label>
-									<input
-										class='span6'
-										type='text'
-										name='email'
-										placeholder='Your E-mail'
-									/>
-								</div>
-							</div>
-							<div class='row'>
-								<div class='span12 textarea-margin'>
-									<label>Message</label>
-									<textarea
-										class='span12'
-										rows='6'
-										name='message'
-										placeholder='Message'></textarea>
-									<button type='submit' class='btn rounded color'>
-										<i class='web-icon'>8</i>Send Message
-									</button>
-								</div>
+									{feedback.messageLink.text}
+								</button>
 							</div>
 						</form>
 					</div>
