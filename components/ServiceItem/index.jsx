@@ -9,7 +9,7 @@ const ServiceItem = ({ service }) => {
 				<span class='service-icon'>
 					<FontAwesomeIcon icon={`${All}/${iconText}`} />
 				</span>
-				{title}
+				{name}
 			</div>
 			<div class='service-text'>
 				<p>{description}</p>

@@ -11,7 +11,7 @@ import * as All from "@fortawesome/free-brands-svg-icons";
 const Address = ({ contact }) => {
 	return (
 		<address>
-			{contact.links.map((link) => (
+			{contact.link.map((link) => (
 				<div className={link.type}>
 					<FontAwesomeIcon icon={`${All}/${link.url}`} />
 					{link.text}

@@ -21,7 +21,7 @@ const About = ({ about }) => {
 							</div>
 						</div>
 						<div class='info-lead'>
-							{about.finishingHead.map((text) => (
+							{about.finishingHeading.map((text) => (
 								<Span text={text} />
 							))}
 						</div>

@@ -5,7 +5,7 @@ const SocialIcons = ({ socialLinks }) => {
 	return (
 		<ul className='social-icons'>
 			{socialLinks.map((link) => (
-				<a href={link.link}>
+				<a href={link.link} key={link.text}>
 					<FontAwesomeIcon icon={`${All}/${link.iconText}`} />
 				</a>
 			))}

@@ -5,7 +5,7 @@ const SloganText = ({ title }) => {
 		<div className='slogan'>
 			<div id='slogan-text' className='slogan-text'>
 				{title.map((text) => (
-					<Span text={text} />
+					<Span key={text.id} text={text} />
 				))}
 			</div>
 		</div>

@@ -491,6 +491,20 @@ nav#mainnav .selectnav {
 	margin-bottom: 60px;
 }
 
+.carousel-next-prev-icons {
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+}
+.carousel-icon {
+	font-size: 30px;
+	margin: 5px;
+	color: white;
+}
+.carousel-icon:hover {
+	color: #fec400;
+}
+
 #portfolio hr {
 	margin: 6px 0 24px 0;
 }

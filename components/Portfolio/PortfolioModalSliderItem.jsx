@@ -2,27 +2,32 @@ import { Carousel } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as All from "@fortawesome/free-brands-svg-icons";
 
-const PortfolioSliderItem = ({ length, carousel, index, setActiveIndex }) => {
-	const { id, title, subTitle, image } = carousel;
-	console.log(carousel);
+const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
+	console.log(index);
 	return (
-		<Carousel.Item key={id}>
-			<div class='slider-text'>
+		<Carousel.Item key={modal.id}>
+			<div>
 				<Carousel.Caption>
-					<a href='#' class='slider-title'>
-						{title}
+					<a
+						href={`http://192.168.0.136:4500${modal.image.url}`}
+						rel={modal.type}
+						className='project-wrp fancybox'
+						title={modal.title}>
+						{modal.title}
 					</a>
-					<div class='slider-desc'>{subTitle}</div>
+					<div class='slider-desc'>{modal.description}</div>
 				</Carousel.Caption>
+				<img
+					src={`http://192.168.0.136:4500${modal.image.url}`}
+					alt={modal.description}
+				/>
 			</div>
-			<img src={`http://192.168.0.136:4500${image.url}`} alt={title} />
 			<div className='carousel-next-prev-icons'>
 				<FontAwesomeIcon
 					className='carousel-icon carousel-prev-icon'
 					icon={All.faAngrycreative}
 					onClick={() => {
-						console.log(index);
-						if (index === 0) {
+						if (index == 0) {
 							setActiveIndex(length - 1);
 						} else {
 							setActiveIndex((prev) => prev - 1);
@@ -45,4 +50,4 @@ const PortfolioSliderItem = ({ length, carousel, index, setActiveIndex }) => {
 	);
 };
 
-export default PortfolioSliderItem;
+export default PortfolioModalSliderItem;

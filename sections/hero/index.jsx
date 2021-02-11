@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as All from "@fortawesome/free-brands-svg-icons";
 
 import SloganText from "../../components/Home/SloganText";
 import Logo from "../../components/Home/Logo";
@@ -19,7 +21,11 @@ const Hero = ({ nav, hero }) => {
 		});
 	}, [isSticky]);
 	return (
-		<header id='home'>
+		<header
+			id='home'
+			style={{
+				background: `#3e4349 url(http://192.168.0.136:4500${hero.backgroundImage.url}) no-repeat center center fixed`,
+			}}>
 			<div className='pattern'></div>
 			<div className='container'>
 				<div className='row'>
