@@ -30,18 +30,16 @@ const Portfolio = ({ portfolio }) => {
 					<div class='span12'>
 						<div class='title'>{name}</div>
 						<div class='flexslider'>
-							<ul>
-								<Carousel
-									activeIndex={activeIndex}
-									onSelect={() => handleSelect(activeIndex)}>
-									<PortfolioSliderItem
-										carousel={carousels[activeIndex]}
-										setActiveIndex={setActiveIndex}
-										index={activeIndex}
-										length={carousels.length}
-									/>
-								</Carousel>
-							</ul>
+							<Carousel
+								activeIndex={activeIndex}
+								onSelect={() => handleSelect(activeIndex)}>
+								<PortfolioSliderItem
+									carousel={carousels[activeIndex]}
+									setActiveIndex={setActiveIndex}
+									index={activeIndex}
+									length={carousels.length}
+								/>
+							</Carousel>
 						</div>
 						<div class='lead'>{excerpt}</div>
 						<hr />
