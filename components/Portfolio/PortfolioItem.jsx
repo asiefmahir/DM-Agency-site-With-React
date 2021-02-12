@@ -35,13 +35,15 @@ const PortfolioItem = ({ work }) => {
 				</div>
 			</a>
 			{active && (
-				<div style={{ border: "1px solid red" }}>
+				<div  style={{width:'70%'}}>
 					<ReactModal
+						className="modal-container"
 						isOpen={active}
 						onRequestClose={() => {
 							setActive(false);
 						}}>
 						<Carousel
+							 
 							activeIndex={activeIndex}
 							onSelect={() => handleSelect(activeIndex)}>
 							<PortfolioModalSliderItem
