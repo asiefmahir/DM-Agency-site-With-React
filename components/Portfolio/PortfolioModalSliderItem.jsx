@@ -26,8 +26,8 @@ const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 			</div>
 			<div className='carousel-modal-next-prev-icons'>
 				<FontAwesomeIcon
-					className='carousel-icon carousel-prev-icon'
-					icon={All.faArrowAltCircleLeft}
+					className='carousel-modal-icon carousel-modal-prev-icon'
+					icon={All.faArrowAltCircleRight}
 					onClick={() => {
 						if (index == 0) {
 							setActiveIndex(length - 1);
@@ -37,10 +37,8 @@ const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 					}}
 				/>
 				<FontAwesomeIcon
-					className='carousel-icon carousel-next-icon'
 					icon={All.faArrowAltCircleLeft}
 					className='carousel-modal-icon carousel-modal-next-icon'
-					icon={All.faArrowAltCircleRight}
 					onClick={() => {
 						if (index == length - 1) {
 							setActiveIndex(0);

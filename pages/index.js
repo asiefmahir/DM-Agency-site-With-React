@@ -2,7 +2,7 @@
 
 import About from "../sections/about-us";
 import Contact from '../sections/contact-us'
-// import CopyRight from '../sections/copy-right'
+import CopyRight from '../sections/copy-right'
 import Feedback from '../sections/feedback'
 import Hero from "../sections/hero";
 import Portfolio from '../sections/portfolio'
@@ -72,6 +72,7 @@ const Home = () => {
 						<Portfolio portfolio={portfolio} />
 						<Contact contact={contact} />
 						<Feedback feedback={feedBack} />
+						<CopyRight />
 						{/* <Team />
 				<Services />
 				<Portfolio />
