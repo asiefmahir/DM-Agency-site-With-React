@@ -808,3 +808,7 @@ nav#mainnav .selectnav {
 	padding-bottom: 50px;
 	background: #f3f4f5;
 }
+
+.filter-icon {
+	width: 10px;
+}

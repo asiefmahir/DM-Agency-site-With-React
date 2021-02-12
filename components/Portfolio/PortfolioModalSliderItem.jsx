@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as All from "@fortawesome/free-brands-svg-icons";
 
 const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
-	console.log(index);
 	return (
 		<Carousel.Item key={modal.id}>
 			<div>
