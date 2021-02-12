@@ -15,7 +15,9 @@ const PortfolioSliderItem = ({ length, carousel, index, setActiveIndex }) => {
 					<div class='slider-desc'>{subTitle}</div>
 				</Carousel.Caption>
 			</div>
-			<img src={`http://192.168.0.136:4500${image.url}`} alt={title} />
+			<div className="slider-img-wrap">
+				<img className="slider-img" src={`http://192.168.0.136:4500${image.url}`} alt={title} />
+			</div>
 			<div className='carousel-next-prev-icons'>
 				<FontAwesomeIcon
 					className='carousel-icon carousel-prev-icon'
