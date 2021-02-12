@@ -1,6 +1,6 @@
 import { Carousel } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as All from "@fortawesome/free-brands-svg-icons";
+import * as All from "@fortawesome/free-solid-svg-icons";
 
 const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 	return (
@@ -26,8 +26,8 @@ const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 			</div>
 			<div className='carousel-modal-next-prev-icons'>
 				<FontAwesomeIcon
-					className='carousel-modal-icon carousel-modal-prev-icon'
-					icon={All.faAngrycreative}
+					className='carousel-icon carousel-prev-icon'
+					icon={All.faArrowAltCircleLeft}
 					onClick={() => {
 						if (index == 0) {
 							setActiveIndex(length - 1);
@@ -37,8 +37,8 @@ const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 					}}
 				/>
 				<FontAwesomeIcon
-					className='carousel-modal-icon carousel-modal-next-icon'
-					icon={All.faAngrycreative}
+					className='carousel-icon carousel-next-icon'
+					icon={All.faArrowAltCircleRight}
 					onClick={() => {
 						if (index == length - 1) {
 							setActiveIndex(0);
