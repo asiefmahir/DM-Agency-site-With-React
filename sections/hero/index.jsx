@@ -25,6 +25,7 @@ const Hero = ({ nav, hero }) => {
 			id='home'
 			style={{
 				background: `#3e4349 url(http://192.168.0.136:4500${hero.backgroundImage.url}) no-repeat center center fixed`,
+				backgroundSize: "cover",
 			}}>
 			<div className='pattern'></div>
 			<div className='container'>

@@ -129,7 +129,9 @@ const Team = ({ title, excerpt, teamMember }) => {
 					<div class='span12'>
 						<div class='title'>
 							{title.map((text) => (
-								<span style={{ color: `${text.variant}` }}> {text.text} </span>
+								<span key={text.text} style={{ color: `${text.variant}` }}>
+									{text.text}
+								</span>
 							))}
 							<span class='yellow-text'>Who</span> we are?
 						</div>
