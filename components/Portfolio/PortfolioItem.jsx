@@ -34,40 +34,26 @@ const PortfolioItem = ({ work }) => {
 					<div class='project-client'>{work.subTitle}</div>
 				</div>
 			</a>
-			{
-				active && (
-					// work.ModalSection.map((modal) => (
-					<div style={{ border: "1px solid red" }}>
-						<ReactModal
-							isOpen={active}
-							onRequestClose={() => {
-								setActive(false);
-								console.log(active);
-							}}
-							shouldCloseOnOverlayClick={true}>
-							<Carousel
-								activeIndex={activeIndex}
-								onSelect={() => handleSelect(activeIndex)}>
-								<PortfolioModalSliderItem
-									modal={work.ModalSection[activeIndex]}
-									index={activeIndex}
-									setActiveIndex={setActiveIndex}
-									length={work.ModalSection.length}
-								/>
-							</Carousel>
-						</ReactModal>
-					</div>
-				)
-				// <div>
-				// 	<a
-				// 		href={modal.image.url}
-				// 		rel={modal.type}
-				// 		className='project-wrp fancybox'
-				// 		title={modal.title}>
-				// 		<img src={modal.image.url} alt={modal.title} />
-				// 	</a>
-				// </div>
-			}
+			{active && (
+				<div style={{ border: "1px solid red" }}>
+					<ReactModal
+						isOpen={active}
+						onRequestClose={() => {
+							setActive(false);
+						}}>
+						<Carousel
+							activeIndex={activeIndex}
+							onSelect={() => handleSelect(activeIndex)}>
+							<PortfolioModalSliderItem
+								modal={work.ModalSection[activeIndex]}
+								index={activeIndex}
+								setActiveIndex={setActiveIndex}
+								length={work.ModalSection.length}
+							/>
+						</Carousel>
+					</ReactModal>
+				</div>
+			)}
 		</div>
 	);
 };

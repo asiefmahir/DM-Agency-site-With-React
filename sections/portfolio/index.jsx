@@ -5,16 +5,23 @@ import PortfolioSliderItem from "../../components/Portfolio/PortfolioSliderItem"
 
 const Portfolio = ({ portfolio }) => {
 	const { name, excerpt, others, carousels, works } = portfolio;
-	console.log(carousels);
-	// const [selected, setSelected] = useState("");
 	const [activeIndex, setActiveIndex] = useState(0);
-	// const handleSelect = (id) => {
-	// 	setSelected(id);
-	// };
 	const [index, setIndex] = useState(0);
-
+	const [category, setCategory] = useState("All");
+	const [activeWorks, setActiveWorks] = useState(works);
 	const handleSelect = (selectedIndex) => {
 		setIndex(selectedIndex);
+	};
+
+	const handleFilter = (category) => {
+		setCategory(category);
+		if (category !== "All") {
+			let filteredWorks = works.filter((work) => work.category === category);
+			setActiveWorks(filteredWorks);
+			console.log("I am triggered", filteredWorks);
+		} else {
+			setActiveWorks(works);
+		}
 	};
 	return (
 		<section id='portfolio' class='page'>
@@ -41,7 +48,6 @@ const Portfolio = ({ portfolio }) => {
 						<div class='sub-title visible-desktop'>{others.title}</div>
 
 						<ul class='option-set' data-option-key='filter'>
-							{/* <li class='filter-icon hidden-phone'>&#0065;</li> */}
 							<li class='filter-icon hidden-phone'>
 								<img
 									class='filter-icon hidden-phone'
@@ -54,12 +60,12 @@ const Portfolio = ({ portfolio }) => {
 								{/* {category[0].title} */}
 							</a>
 							{others.categoy.map((item) => (
-								<li key={item.id}>
+								<li key={item.id} style={{ cursor: "pointer" }}>
 									<a
 										class='selected'
-										href={item.url}
+										// href={item.url}
 										data-option-value='*'
-										onClick={() => handleSelect(item.url)}>
+										onClick={() => handleFilter(item.url)}>
 										<span></span>
 										{item.text}
 									</a>
@@ -68,7 +74,7 @@ const Portfolio = ({ portfolio }) => {
 						</ul>
 
 						<div id='posts' class='row isotope '>
-							{works.map((work) => (
+							{activeWorks.map((work) => (
 								<PortfolioItem work={work} />
 							))}
 						</div>

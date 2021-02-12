@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Navigation = ({ navlink }) => {
+	console.log(navlink);
 	const [current, setCurrent] = useState("");
 	const handleClick = (id) => {
 		setCurrent(id);
@@ -12,7 +13,7 @@ const Navigation = ({ navlink }) => {
 					onClick={() => handleClick(link.id)}
 					key={link.id}
 					className={`${current === link.id ? "current" : ""}`}>
-					<a href={link}>{link.text}</a>
+					<a href={link.url}>{link.text}</a>
 				</li>
 			))}
 		</ul>
