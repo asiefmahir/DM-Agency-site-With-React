@@ -4,9 +4,9 @@ import * as All from "@fortawesome/free-solid-svg-icons";
 
 const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 	return (
-		<Carousel.Item  className="carousel-modal-item-wrap" key={modal.id} >
-			<div className="carousel-modal-item">
-				<div class="carousel-modal-item-img">
+		<Carousel.Item className='carousel-modal-item-wrap' key={modal.id}>
+			<div className='carousel-modal-item'>
+				<div class='carousel-modal-item-img'>
 					<img
 						src={`http://192.168.0.136:4500${modal.image.url}`}
 						alt={modal.description}
@@ -38,6 +38,8 @@ const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 				/>
 				<FontAwesomeIcon
 					className='carousel-icon carousel-next-icon'
+					icon={All.faArrowAltCircleLeft}
+					className='carousel-modal-icon carousel-modal-next-icon'
 					icon={All.faArrowAltCircleRight}
 					onClick={() => {
 						if (index == length - 1) {
