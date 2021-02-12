@@ -4,7 +4,7 @@ import { Carousel } from "react-bootstrap";
 
 import PortfolioModalSliderItem from "./PortfolioModalSliderItem";
 
-ReactModal.setAppElement("#__next");
+ReactModal.setAppElement("#root");
 
 const PortfolioItem = ({ work }) => {
 	const [index, setIndex] = useState(0);
@@ -15,11 +15,11 @@ const PortfolioItem = ({ work }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	const [active, setActive] = useState(false);
+	// console.log(active);
 	return (
-		<div
-			class='post item span4 isotope-item strategy'
-			onClick={() => setActive(true)}>
+		<div class='post item span4 isotope-item strategy'>
 			<a
+				onClick={() => setActive(true)}
 				href={work.thumb.url}
 				rel={work.category}
 				className='project-wrp fancybox'
@@ -34,34 +34,40 @@ const PortfolioItem = ({ work }) => {
 					<div class='project-client'>{work.subTitle}</div>
 				</div>
 			</a>
-			{active &&
-				work.ModalSection.map((modal) => (
-					<ReactModal
-						shouldCloseOnOverlayClick={true}
-						shouldCloseOnEsc={true}
-						isOpen={active}
-						onRequestClose={() => setActive(false)}>
-						<Carousel
-							activeIndex={activeIndex}
-							onSelect={() => handleSelect(activeIndex)}>
-							<PortfolioModalSliderItem
-								modal={work.ModalSection[activeIndex]}
-								index={activeIndex}
-								setActiveIndex={setActiveIndex}
-								length={work.ModalSection.length}
-							/>
-						</Carousel>
-					</ReactModal>
-					// <div>
-					// 	<a
-					// 		href={modal.image.url}
-					// 		rel={modal.type}
-					// 		className='project-wrp fancybox'
-					// 		title={modal.title}>
-					// 		<img src={modal.image.url} alt={modal.title} />
-					// 	</a>
-					// </div>
-				))}
+			{
+				active && (
+					// work.ModalSection.map((modal) => (
+					<div style={{ border: "1px solid red" }}>
+						<ReactModal
+							isOpen={active}
+							onRequestClose={() => {
+								setActive(false);
+								console.log(active);
+							}}
+							shouldCloseOnOverlayClick={true}>
+							<Carousel
+								activeIndex={activeIndex}
+								onSelect={() => handleSelect(activeIndex)}>
+								<PortfolioModalSliderItem
+									modal={work.ModalSection[activeIndex]}
+									index={activeIndex}
+									setActiveIndex={setActiveIndex}
+									length={work.ModalSection.length}
+								/>
+							</Carousel>
+						</ReactModal>
+					</div>
+				)
+				// <div>
+				// 	<a
+				// 		href={modal.image.url}
+				// 		rel={modal.type}
+				// 		className='project-wrp fancybox'
+				// 		title={modal.title}>
+				// 		<img src={modal.image.url} alt={modal.title} />
+				// 	</a>
+				// </div>
+			}
 		</div>
 	);
 };
