@@ -770,8 +770,11 @@ nav#mainnav .selectnav {
 	font-size: 18px;
 	letter-spacing: -1px;
 	margin-top: 20px;
+	margin-left: 23px;
 }
-
+.feedback-btn {
+	margin-left: 25px;
+}
 #feedback button.btn.color:hover {
 	background: #fff;
 	color: #3e4349;
