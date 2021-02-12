@@ -4,8 +4,15 @@ import * as All from "@fortawesome/free-brands-svg-icons";
 
 const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 	return (
-		<Carousel.Item key={modal.id}>
-			<div>
+		<Carousel.Item  className="carousel-modal-item-wrap" key={modal.id} >
+			<div className="carousel-modal-item">
+				<div class="carousel-modal-item-img">
+					<img
+						src={`http://192.168.0.136:4500${modal.image.url}`}
+						alt={modal.description}
+					/>
+				</div>
+
 				<Carousel.Caption>
 					<a
 						href={`http://192.168.0.136:4500${modal.image.url}`}
@@ -14,16 +21,12 @@ const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 						title={modal.title}>
 						{modal.title}
 					</a>
-					<div class='slider-desc'>{modal.description}</div>
+					<div className='slider-desc'>{modal.description}</div>
 				</Carousel.Caption>
-				<img
-					src={`http://192.168.0.136:4500${modal.image.url}`}
-					alt={modal.description}
-				/>
 			</div>
-			<div className='carousel-next-prev-icons'>
+			<div className='carousel-modal-next-prev-icons'>
 				<FontAwesomeIcon
-					className='carousel-icon carousel-prev-icon'
+					className='carousel-modal-icon carousel-modal-prev-icon'
 					icon={All.faAngrycreative}
 					onClick={() => {
 						if (index == 0) {
@@ -34,7 +37,7 @@ const PortfolioModalSliderItem = ({ modal, index, length, setActiveIndex }) => {
 					}}
 				/>
 				<FontAwesomeIcon
-					className='carousel-icon carousel-next-icon'
+					className='carousel-modal-icon carousel-modal-next-icon'
 					icon={All.faAngrycreative}
 					onClick={() => {
 						if (index == length - 1) {
