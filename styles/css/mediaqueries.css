@@ -108,7 +108,9 @@
 
 /* --------- Mobile Phones --------- */
 @media (max-width: 767px) {
-
+	.logo{
+		left:71px !important;
+	}
 	header {
 		height: 400px;
 		background-size: 1000px;
@@ -160,7 +162,7 @@
 	}
 	
 	.title {
-		font-size: 34px;
+		font-size: 25px;
 		letter-spacing: -2px;
 		margin-bottom: 20px;
 	}
@@ -273,7 +275,7 @@
 	.slogan {
 		font-size: 36px;
 		letter-spacing: -2px;
-		margin-top: 10%;
+		margin-top: 50%;
 	}
 	
 	.nextslide {
@@ -289,7 +291,7 @@
 	}
 	
 	nav#topnav {
-		height: 130px;
+		height: 75px;
 	}
 	
 	.flexslider {
