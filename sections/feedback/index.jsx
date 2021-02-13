@@ -22,7 +22,9 @@ const Feedback = ({ feedback }) => {
 									}
 								})}
 
-								<button type='submit' class='btn rounded color'>
+								<button
+									type='submit'
+									className='btn feedback-btn rounded color'>
 									<FontAwesomeIcon
 										icon={`${All}/${feedback.messageLink.url}`}
 									/>
