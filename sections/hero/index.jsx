@@ -34,7 +34,7 @@ const Hero = ({ nav, hero }) => {
 						<nav
 							id='topnav'
 							className={`${isSticky ? "sticky" : "transparents"}`}>
-							<div className='row'>
+							<div className=''>
 								<Logo />
 								<Nav navlink={navlink} socialLinks={socialLinks} />
 							</div>
