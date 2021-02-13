@@ -665,8 +665,6 @@ nav#mainnav .selectnav {
 .ReactModal__Overlay--after-open{
 	background:rgba(0, 0, 0, 0.767)!important;
 	z-index:999;
-.ReactModal__Overlay--after-open {
-	background: rgba(0, 0, 0, 0.767) !important;
 }
 .modal-container {
 	position: absolute !important;
